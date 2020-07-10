@@ -1,0 +1,17 @@
+export const SET_ALERT = 'SET_ALERT';
+export const REMOVE_ALERT = 'REMOVE_ALERT';
+export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
+export const REGISTER_FAIL = 'REGISTER_FAIL';
+export const USER_LOADED = 'USER_LOADED';
+export const AUTH_ERROR = 'AUTH_ERROR';
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+export const LOGIN_FAIL = 'LOGIN_FAIL';
+export const LOGOUT = 'LOGOUT';
+export const SUGGEST_RESULT = 'SUGGEST_RESULT';
+export const CLEAR_SUGGESTION = 'CLEAR_SUGGESTION';
+export const SEARCH_FOOD = 'SEARCH_FOOD';
+export const GET_DIARY = 'GET_DIARY';
+export const ADD_FOOD = 'ADD_FOOD';
+export const ADD_FOOD_GUEST = 'ADD_FOOD_GUEST';
+export const DELETE_FOOD = 'DELETE_FOOD';
+export const DELETE_FOOD_GUEST = 'DELETE_FOOD_GUEST';

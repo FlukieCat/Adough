@@ -1,0 +1,5 @@
+{
+    "mongoURI": "mongodb+srv://Huabei:Jobs2020@adough-yovzx.azure.mongodb.net/Adough?retryWrites=true&w=majority",
+    "jwtSecret": "ineedafuckingjob",
+    "USDAKey": "nPE13xSAhpy5Ugi0gZEuxQdpxgd7UI0uFOfihYcX"
+}

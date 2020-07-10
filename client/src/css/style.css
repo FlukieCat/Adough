@@ -1,0 +1,484 @@
+.m-1 {
+  margin: 1rem;
+}
+
+.my-1 {
+  margin: 1rem 0;
+}
+
+.p-1 {
+  padding: 1rem;
+}
+
+.py-1 {
+  padding: 1rem 0;
+}
+
+.m-2 {
+  margin: 2rem;
+}
+
+.my-2 {
+  margin: 2rem 0;
+}
+
+.p-2 {
+  padding: 2rem;
+}
+
+.py-2 {
+  padding: 2rem 0;
+}
+
+.m-3 {
+  margin: 3rem;
+}
+
+.my-3 {
+  margin: 3rem 0;
+}
+
+.p-3 {
+  padding: 3rem;
+}
+
+.py-3 {
+  padding: 3rem 0;
+}
+
+.m-4 {
+  margin: 4rem;
+}
+
+.my-4 {
+  margin: 4rem 0;
+}
+
+.p-4 {
+  padding: 4rem;
+}
+
+.py-4 {
+  padding: 4rem 0;
+}
+
+.m-5 {
+  margin: 5rem;
+}
+
+.my-5 {
+  margin: 5rem 0;
+}
+
+.p-5 {
+  padding: 5rem;
+}
+
+.py-5 {
+  padding: 5rem 0;
+}
+
+.container {
+  max-width: 1280px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
+  margin-top: 6rem;
+  margin-bottom: 3rem;
+}
+
+.bg-primary {
+  background-color: #4caf50;
+  color: #fff;
+}
+.bg-dark {
+  background-color: #261f18;
+  color: #fff;
+}
+.bg-light {
+  background-color: #c5ffc7;
+  color: #333;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.text-primary {
+  color: #4caf50;
+}
+.text-light {
+  color: #aaa;
+}
+.text-dark {
+  color: #261f18;
+}
+.text-md {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.text-lg {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.text-xl {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  outline: none;
+  background-color: #4caf50;
+  color: #fff;
+}
+.btn.btn-light {
+  background-color: #c5ffc7;
+  color: #333;
+}
+
+.alert {
+  padding: 0.8rem;
+  margin: 1rem;
+  opacity: 0.9;
+  background: #c5ffc7;
+  color: #333;
+}
+.alert.alert-primary {
+  background-color: #4caf50;
+  color: #fff;
+}
+.alert.alert-dark {
+  background-color: #261f18;
+  color: #fff;
+}
+.alert.alert-danger {
+  background-color: #c20027;
+  color: #fff;
+}
+
+.dark-overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.form-group {
+  margin: 1.2rem 0;
+}
+.form input[type=text],
+.form input[type=email],
+.form input[type=password],
+.form input[type=date],
+.form select,
+.form textarea {
+  display: block;
+  width: 100%;
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 300px auto;
+  grid-template-areas: "calendar diary diary diary" "macros macros macros macros";
+  grid-gap: 2rem;
+}
+.dashboard .calendar {
+  width: 90%;
+  height: 100%;
+  grid-area: calendar;
+}
+.dashboard .calendar .dashboard-buttons {
+  width: 100%;
+}
+.dashboard .calendar .dashboard-buttons a {
+  width: 100%;
+  text-align: center;
+}
+.dashboard .diary {
+  grid-area: diary;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ccc;
+  overflow-y: scroll;
+}
+.dashboard .diary table {
+  width: 100%;
+}
+.dashboard .diary table thead {
+  background-color: #4caf50;
+  color: white;
+}
+.dashboard .diary table th,
+.dashboard .diary table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+.dashboard .diary table .th-desc,
+.dashboard .diary table .td-desc {
+  table-layout: auto;
+  cursor: pointer;
+}
+.dashboard .diary table .th-amount,
+.dashboard .diary table .td-amount {
+  table-layout: fixed;
+  width: 100px;
+  cursor: pointer;
+}
+.dashboard .diary table .th-calories,
+.dashboard .diary table .td-calories {
+  table-layout: fixed;
+  width: 100px;
+}
+.dashboard .macros {
+  grid-area: macros;
+  height: 30vh;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dashboard .macros .pie {
+  height: 100%;
+  width: 40%;
+}
+.dashboard .macros .calories {
+  height: 100%;
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dashboard .macros .calories .card {
+  height: 50%;
+  width: 60%;
+  background-color: #4caf50;
+  color: #fff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.dashboard .macros .calories .card h5 {
+  font-size: 1rem;
+}
+.dashboard .macros .bar {
+  height: 100%;
+  width: 40%;
+}
+
+.register-modal {
+  position: relative;
+  background: white;
+  width: 400px;
+  height: 200px;
+  margin: auto;
+  margin-top: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.register-modal .buttons {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  margin-top: 2rem;
+}
+
+.add-food-modal {
+  position: relative;
+  background: white;
+  width: 700px;
+  margin: auto;
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.add-food-modal .searchbar {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.add-food-modal .searchbar .input-field-searchbar {
+  width: 70%;
+  height: 30px;
+}
+.add-food-modal .suggestions {
+  width: 90%;
+  height: 400px;
+  overflow-y: scroll;
+}
+.add-food-modal .suggestions .suggestion {
+  cursor: pointer;
+  border-top: 1px #ccc solid;
+  margin: 1px 0;
+}
+.add-food-modal .suggestions .suggestion:hover {
+  background: #c5ffc7;
+}
+.add-food-modal .quantity-form {
+  width: 90%;
+  height: 30px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.add-food-modal .quantity-form input {
+  height: 80%;
+  width: 40px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  background: #fff;
+  color: #333;
+}
+
+title {
+  font-family: "Rubik", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+.navbar {
+  font-family: "Rubik", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 2rem;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  top: 0;
+}
+.navbar ul {
+  display: flex;
+  align-items: center;
+}
+.navbar a {
+  padding: 0.4rem;
+  margin: 0 0.5rem;
+}
+.navbar a:hover {
+  color: #c5ffc7;
+}
+
+.landing {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.landing .banner {
+  position: relative;
+  background: url("../img/banner.jpg") no-repeat center center/cover;
+  height: 50vh;
+  margin-bottom: 1rem;
+}
+.landing .banner-inner {
+  color: #fff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.landing .banner-inner .searchbar {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.landing .banner-inner .searchbar .input-field-searchbar {
+  width: 80%;
+  height: 100%;
+}
+.landing .banner-inner .searchbar .btn {
+  border-radius: initial;
+}
+.landing .lead {
+  margin-left: 5%;
+}
+.landing .line {
+  width: 90%;
+  height: 2px;
+  background: #aaa;
+  margin: auto;
+  margin-bottom: 1rem;
+}
+.landing .cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 2rem;
+  width: 90%;
+  margin: auto;
+}
+.landing .cards .card {
+  display: flex;
+  padding: 1rem 1rem 1rem 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.landing .cards .card .text {
+  font-family: "Rubik";
+}
+.landing .cards .card .text a {
+  color: #261f18;
+  text-decoration: underline;
+}
+.landing .cards .card img {
+  width: 60%;
+}
+
+footer {
+  font-family: "Times New Roman", Times, serif;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #261f18;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.2rem 1rem;
+}
+
+/*# sourceMappingURL=style.css.map */

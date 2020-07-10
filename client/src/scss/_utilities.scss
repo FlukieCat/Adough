@@ -1,0 +1,94 @@
+// Container
+.container {
+    max-width: $max-width;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 2rem;
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+}
+
+// Backgrounds
+.bg {
+    &-primary {
+        @include set-background($primary-color);
+    }
+    &-dark {
+        @include set-background($dark-color);
+    }
+    &-light {
+        @include set-background($light-color);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+}
+
+// Text styles
+.text {
+    &-primary {
+        color: $primary-color;
+    }
+    &-light {
+        color: #aaa;
+    }
+    &-dark {
+        color: $dark-color;
+    }
+    &-md {
+        font-size: 1.5rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+    &-lg {
+        font-size: 2rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+    &-xl {
+        font-size: 3rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+}
+
+// Buttons
+.btn {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    outline: none;
+    @include set-background($primary-color);
+
+    &.btn-light {
+        @include set-background($light-color);
+    }
+}
+
+// Alerts
+.alert {
+    padding: 0.8rem;
+    margin: 1rem;
+    opacity: 0.9;
+    background: $light-color;
+    color: #333;
+
+    &.alert-primary {
+        @include set-background($primary-color);
+    }
+    &.alert-dark {
+        @include set-background($dark-color);
+    }
+    &.alert-danger {
+        @include set-background($danger-color);
+    }
+}
+
+.dark-overlay {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+}

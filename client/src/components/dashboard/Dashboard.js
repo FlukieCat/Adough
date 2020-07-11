@@ -10,8 +10,9 @@ import MacroPie from './MacroPie';
 import MacroBar from './MacroBar';
 import Calories from './Calories';
 import { getDiary } from '../../actions/diary';
+import { loadUser } from './actions/auth';
 
-const Dashboard = ({ diary, isAuthenticated, getDiary, auth: { loading } }) => {
+const Dashboard = ({ diary, isAuthenticated, getDiary, loading, loadUser }) => {
     const [date, setDate] = useState(new Date());
     const [modalOpen, setModalOpen] = useState(false);
     const [registerModalOpen, setRegisterModalOpen] = useState(false);
@@ -20,6 +21,7 @@ const Dashboard = ({ diary, isAuthenticated, getDiary, auth: { loading } }) => {
         if (diary.suggestions.length !== 0) {
             setModalOpen(true);
         }
+        loadUser();
         // eslint-disable-next-line
     }, []);
 
@@ -87,8 +89,8 @@ Dashboard.propTypes = {
 
 const mapStateToProps = (state) => ({
     isAuthenticated: state.auth.isAuthenticated,
+    loading: state.auth.loading,
     diary: state.diary,
-    auth: state.auth,
 });
 
-export default connect(mapStateToProps, { getDiary })(Dashboard);
+export default connect(mapStateToProps, { getDiary, loadUser })(Dashboard);

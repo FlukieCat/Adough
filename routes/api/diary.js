@@ -22,7 +22,12 @@ router.get('/:fdcId', (req, res) => {
         };
         request(options, (error, response, body) => {
             if (error) console.error(error);
-            if (response.statusCode !== 200) {
+            if (error instanceof TypeError) {
+                return res
+                    .status(404)
+                    .json({ msg: 'No item found in the dababase' });
+            }
+            if (response && response.statusCode !== 200) {
                 return res
                     .status(404)
                     .json({ msg: 'No item found in the dababase' });
@@ -56,7 +61,12 @@ router.post(
             };
             request(options, async (error, response, body) => {
                 if (error) console.error(error);
-                if (response.statusCode !== 200) {
+                if (error instanceof TypeError) {
+                    return res
+                        .status(404)
+                        .json({ msg: 'No item found in the dababase' });
+                }
+                if (response && response.statusCode !== 200) {
                     return res
                         .status(404)
                         .json({ msg: 'No item found in the dababase' });
@@ -112,7 +122,12 @@ router.post(
             };
             request(options, async (error, response, body) => {
                 if (error) console.error(error);
-                if (response.statusCode !== 200) {
+                if (error instanceof TypeError) {
+                    return res
+                        .status(404)
+                        .json({ msg: 'No item found in the dababase' });
+                }
+                if (response && response.statusCode !== 200) {
                     return res
                         .status(404)
                         .json({ msg: 'No item found in the dababase' });

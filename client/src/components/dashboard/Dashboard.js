@@ -10,7 +10,7 @@ import MacroPie from './MacroPie';
 import MacroBar from './MacroBar';
 import Calories from './Calories';
 import { getDiary } from '../../actions/diary';
-import { loadUser } from './actions/auth';
+import { loadUser } from '../../actions/auth';
 
 const Dashboard = ({ diary, isAuthenticated, getDiary, loading, loadUser }) => {
     const [date, setDate] = useState(new Date());

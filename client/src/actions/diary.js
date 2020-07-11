@@ -36,7 +36,8 @@ export const clearSuggestion = () => (dispatch) => {
 };
 
 export const getDiary = (date) => async (dispatch) => {
-    const d = date.toISOString().slice(0, 10);
+    const d =
+        date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
     try {
         const res = await axios.get(`/api/diary/date/${d}`);
         dispatch({

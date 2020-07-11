@@ -9,8 +9,9 @@ import RegisterModal from './RegisterModal';
 import MacroPie from './MacroPie';
 import MacroBar from './MacroBar';
 import Calories from './Calories';
+import { getDiary } from '../../actions/diary';
 
-const Dashboard = ({ diary, isAuthenticated }) => {
+const Dashboard = ({ diary, isAuthenticated, getDiary, auth: { loading } }) => {
     const [date, setDate] = useState(new Date());
     const [modalOpen, setModalOpen] = useState(false);
     const [registerModalOpen, setRegisterModalOpen] = useState(false);
@@ -21,6 +22,10 @@ const Dashboard = ({ diary, isAuthenticated }) => {
         }
         // eslint-disable-next-line
     }, []);
+
+    useEffect(() => {
+        if (!loading && isAuthenticated) getDiary(date);
+    }, [date, isAuthenticated, loading, getDiary]);
 
     const onClickDay = (d) => {
         if (isAuthenticated) {
@@ -45,11 +50,11 @@ const Dashboard = ({ diary, isAuthenticated }) => {
                 <Calendar onClickDay={(d) => onClickDay(d)} value={date} />
             </div>
             <div className="diary">
-                <Diary date={date} />
+                <Diary date={date} diary={diary.diary} />
             </div>
 
             <div className="macros">
-                <div class="calories">
+                <div className="calories">
                     <Calories />
                 </div>
                 <div className="pie">
@@ -77,11 +82,13 @@ const Dashboard = ({ diary, isAuthenticated }) => {
 
 Dashboard.propTypes = {
     diary: PropTypes.object.isRequired,
+    getDiary: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
     isAuthenticated: state.auth.isAuthenticated,
     diary: state.diary,
+    auth: state.auth,
 });
 
-export default connect(mapStateToProps, {})(Dashboard);
+export default connect(mapStateToProps, { getDiary })(Dashboard);

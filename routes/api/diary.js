@@ -149,6 +149,7 @@ router.delete('/:id', auth, async (req, res) => {
 router.get('/date/:date', auth, async (req, res) => {
     try {
         const diary = await Diary.find({
+            user: req.user.id,
             date: { $eq: moment(req.params.date, 'YYYY-MM-DD') },
         });
         return res.json(diary);

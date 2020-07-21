@@ -262,7 +262,7 @@
   align-items: center;
 }
 .dashboard .macros .calories .card {
-  height: 50%;
+  height: 80%;
   width: 60%;
   background-color: #4caf50;
   color: #fff;
@@ -271,6 +271,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.dashboard .macros .calories .card h5 {
+  font-size: 1rem;
 }
 .dashboard .macros .bar {
   height: 100%;

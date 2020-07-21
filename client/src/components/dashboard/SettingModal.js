@@ -74,7 +74,6 @@ const SettingModal = ({
                         id="gender"
                         value={gender}
                         onChange={(e) => onChange(e)}
-                        required
                     >
                         <option value="male">Male</option>
                         <option value="female">Female</option>
@@ -121,7 +120,6 @@ const SettingModal = ({
                         id="activeLevel"
                         value={activeLevel}
                         onChange={(e) => onChange(e)}
-                        required
                     >
                         <option value="Little to no exercise">
                             Little to no exercise

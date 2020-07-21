@@ -72,8 +72,8 @@ router.post(
 
             const rda = await RDA.findOne({
                 gender: gender,
-                'age.min': { $lt: parseInt(age) },
-                'age.max': { $gt: parseInt(age) },
+                'age.min': { $lte: parseInt(age) },
+                'age.max': { $gte: parseInt(age) },
             });
 
             newSetting.protein = rda.protein;

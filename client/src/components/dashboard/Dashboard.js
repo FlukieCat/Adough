@@ -91,7 +91,13 @@ const Dashboard = ({
                         <a
                             href="#!"
                             className="btn btn-primary"
-                            onClick={() => setSettingModalOpen(true)}
+                            onClick={() => {
+                                if (isAuthenticated) {
+                                    setSettingModalOpen(true);
+                                } else {
+                                    setRegisterModalOpen(true);
+                                }
+                            }}
                         >
                             <i className="fas fa-user-edit"></i> Edit Setting
                         </a>

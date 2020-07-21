@@ -16,11 +16,11 @@ const SettingModal = ({
     setAlert,
 }) => {
     const [formData, setFormData] = useState({
-        gender: '',
+        gender: 'male',
         age: '',
         height: '',
         weight: '',
-        activeLevel: '',
+        activeLevel: 'Little to no exercise',
     });
     useEffect(() => {
         if (!loading) {

@@ -1,29 +1,10 @@
 const mongoose = require('mongoose');
 
-const SettingSchema = new mongoose.Schema({
-    user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'user',
+const RDASchema = new mongoose.Schema({
+    age: {
+        type: Object,
     },
     gender: {
-        type: String,
-    },
-    age: {
-        type: String,
-    },
-    height: {
-        type: String,
-    },
-    weight: {
-        type: String,
-    },
-    activeLevel: {
-        type: String,
-    },
-    calories: {
-        type: String,
-    },
-    fiber: {
         type: String,
     },
     protein: {
@@ -82,4 +63,4 @@ const SettingSchema = new mongoose.Schema({
     },
 });
 
-module.exports = Setting = mongoose.model('setting', SettingSchema);
+module.exports = RDA = mongoose.model('rda', RDASchema);

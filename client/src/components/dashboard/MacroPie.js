@@ -7,8 +7,8 @@ import { connect } from 'react-redux';
 // website examples showcase many properties,
 // you'll often use just a few of them.
 
-const MacroPie = ({ diary }) => {
-    const getMacroData = (diary) => {
+const MacroPie = ({ nutrition }) => {
+    const getMacroData = (nutrition) => {
         const carb = {
             id: 'Carb',
             label: 'Carb',
@@ -27,26 +27,18 @@ const MacroPie = ({ diary }) => {
             value: 0,
             color: '#f9a828',
         };
-        if (diary.length !== 0) {
-            carb.value = diary
-                .map((item) => item.carb * (item.quantity / 100))
-                .reduce((a, b) => a + b, 0);
-            protein.value = diary
-                .map((item) => item.protein * (item.quantity / 100))
-                .reduce((a, b) => a + b, 0);
-            fat.value = diary
-                .map((item) => item.fat * (item.quantity / 100))
-                .reduce((a, b) => a + b, 0);
+        carb.value = nutrition.carb;
+        protein.value = nutrition.protein;
+        fat.value = nutrition.fat;
 
-            const total = carb.value * 4 + protein.value * 4 + fat.value * 9;
-            carb.value = Math.round(((carb.value * 4) / total) * 100);
-            protein.value = Math.round(((protein.value * 4) / total) * 100);
-            fat.value = Math.round(((fat.value * 9) / total) * 100);
-        }
+        const total = carb.value * 4 + protein.value * 4 + fat.value * 9;
+        carb.value = Math.round(((carb.value * 4) / total) * 100);
+        protein.value = Math.round(((protein.value * 4) / total) * 100);
+        fat.value = Math.round(((fat.value * 9) / total) * 100);
 
         return [carb, fat, protein];
     };
-    const data = getMacroData(diary);
+    const data = getMacroData(nutrition);
     return (
         <ResponsivePie
             data={data}
@@ -79,7 +71,7 @@ const MacroPie = ({ diary }) => {
 };
 
 const mapStateToProps = (state) => ({
-    diary: state.diary.diary,
+    nutrition: state.diary.nutrition,
 });
 
 export default connect(mapStateToProps)(MacroPie);

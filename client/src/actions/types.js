@@ -15,3 +15,5 @@ export const ADD_FOOD = 'ADD_FOOD';
 export const ADD_FOOD_GUEST = 'ADD_FOOD_GUEST';
 export const DELETE_FOOD = 'DELETE_FOOD';
 export const DELETE_FOOD_GUEST = 'DELETE_FOOD_GUEST';
+export const LOAD_SETTING = 'LOAD_SETTING';
+export const UPDATE_NUTRITION = 'UPDATE_NUTRITION';

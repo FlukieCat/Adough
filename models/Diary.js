@@ -61,28 +61,28 @@ const DiarySchema = new mongoose.Schema({
     vitaminK: {
         type: String,
     },
-    Calcium: {
+    calcium: {
         type: String,
     },
-    Iron: {
+    iron: {
         type: String,
     },
-    Magnesium: {
+    magnesium: {
         type: String,
     },
-    Potassium: {
+    potassium: {
         type: String,
     },
-    Sodium: {
+    sodium: {
         type: String,
     },
-    Zinc: {
+    zinc: {
         type: String,
     },
-    Copper: {
+    copper: {
         type: String,
     },
-    Selenium: {
+    selenium: {
         type: String,
     },
 });

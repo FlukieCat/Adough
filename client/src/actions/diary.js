@@ -7,6 +7,7 @@ import {
     ADD_FOOD_GUEST,
     DELETE_FOOD,
     DELETE_FOOD_GUEST,
+    UPDATE_NUTRITION,
 } from '../actions/types';
 
 export const suggestSearchResult = (
@@ -100,5 +101,11 @@ export const deleteFoodGuest = (fdcId) => (dispatch) => {
     dispatch({
         type: DELETE_FOOD_GUEST,
         payload: fdcId,
+    });
+};
+
+export const updateNutrition = () => (dispatch) => {
+    dispatch({
+        type: UPDATE_NUTRITION,
     });
 };

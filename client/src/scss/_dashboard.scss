@@ -4,7 +4,8 @@
     grid-template-rows: 300px auto;
     grid-template-areas:
         'calendar diary diary diary'
-        'macros macros macros macros';
+        'macros macros macros macros'
+        'micros micros micros micros';
     grid-gap: 2rem;
     .calendar {
         width: 90%;
@@ -57,6 +58,7 @@
     .macros {
         grid-area: macros;
         height: 30vh;
+        padding: 10px;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         display: flex;
         align-items: center;
@@ -80,14 +82,49 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                h5 {
-                    font-size: 1rem;
-                }
             }
         }
         .bar {
             height: 100%;
             width: 40%;
+        }
+    }
+    .micros {
+        grid-area: micros;
+        height: 35vh;
+        padding: 10px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .minerals {
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            height: 100%;
+            width: 40%;
+            h5 {
+                height: 10%;
+            }
+        }
+        .vitamins {
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            height: 100%;
+            width: 40%;
+            h5 {
+                height: 10%;
+            }
+        }
+        .settings {
+            height: 100%;
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            padding: 0 2rem;
         }
     }
 }
@@ -108,6 +145,30 @@
         width: 100%;
         justify-content: space-evenly;
         margin-top: 2rem;
+    }
+}
+
+.setting-modal {
+    position: relative;
+    background: white;
+    width: 300px;
+    height: 500px;
+    margin: auto;
+    margin-top: 20vh;
+    form {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .form-group {
+            width: 80%;
+            margin: 0.5rem 0rem;
+        }
+        .btn {
+            margin-top: 1rem;
+        }
     }
 }
 

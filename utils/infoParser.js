@@ -3,45 +3,59 @@ const infoParser = (body) => {
         name: '',
         fdcId: '',
         calories: '',
-        carb: '',
-        fat: '',
-        protein: '',
-        sugar: '',
-        fiber: '',
-        vitaminA: '',
-        vitaminB6: '',
-        vitaminB12: '',
-        vitaminC: '',
-        vitaminD: '',
-        vitaminE: '',
-        vitaminK: '',
-        Calcium: '',
-        Iron: '',
-        Magnesium: '',
-        Potassium: '',
-        Sodium: '',
-        Zinc: '',
-        Copper: '',
-        Selenium: '',
+        carb: 0,
+        fat: 0,
+        protein: 0,
+        sugar: 0,
+        fiber: 0,
+        vitaminA: 0,
+        vitaminB6: 0,
+        vitaminB12: 0,
+        vitaminC: 0,
+        vitaminD: 0,
+        vitaminE: 0,
+        vitaminK: 0,
+        calcium: 0,
+        iron: 0,
+        magnesium: 0,
+        potassium: 0,
+        sodium: 0,
+        zinc: 0,
+        copper: 0,
+        selenium: 0,
     };
     diary.name = body.description;
     diary.fdcId = body.fdcId.toString();
     diary.calories = body.foodNutrients
         .find((item) => item.nutrient.name === 'Energy')
         .amount.toString();
-    diary.carb = body.foodNutrients
-        .find((item) => item.nutrient.name === 'Carbohydrate, by difference')
-        .amount.toString();
-    diary.fat = body.foodNutrients
-        .find((item) => item.nutrient.name === 'Total lipid (fat)')
-        .amount.toString();
-    diary.protein = body.foodNutrients
-        .find((item) => item.nutrient.name === 'Protein')
-        .amount.toString();
-    const suger = body.foodNutrients.find(
+    const carb = body.foodNutrients.find(
+        (item) => item.nutrient.name === 'Carbohydrate, by difference'
+    );
+    if (carb)
+        diary.carb = body.foodNutrients
+            .find(
+                (item) => item.nutrient.name === 'Carbohydrate, by difference'
+            )
+            .amount.toString();
+    const fat = body.foodNutrients.find(
+        (item) => item.nutrient.name === 'Total lipid (fat)'
+    );
+    if (fat)
+        diary.fat = body.foodNutrients
+            .find((item) => item.nutrient.name === 'Total lipid (fat)')
+            .amount.toString();
+    const protein = body.foodNutrients.find(
+        (item) => item.nutrient.name === 'Protein'
+    );
+    if (protein)
+        diary.protein = body.foodNutrients
+            .find((item) => item.nutrient.name === 'Protein')
+            .amount.toString();
+    const sugar = body.foodNutrients.find(
         (item) => item.nutrient.name === 'Sugars, total including NLEA'
     );
-    if (suger) diary.sugar = suger.amount.toString();
+    if (sugar) diary.sugar = sugar.amount.toString();
     const fiber = body.foodNutrients.find(
         (item) => item.nutrient.name === 'Fiber, total dietary'
     );
@@ -85,35 +99,35 @@ const infoParser = (body) => {
     const ca = body.foodNutrients.find(
         (item) => item.nutrient.name === 'Calcium, Ca'
     );
-    if (ca) diary.Calcium = ca.amount.toString();
+    if (ca) diary.calcium = ca.amount.toString();
     const fe = body.foodNutrients.find(
         (item) => item.nutrient.name === 'Iron, Fe'
     );
-    if (fe) diary.Iron = fe.amount.toString();
+    if (fe) diary.iron = fe.amount.toString();
     const mg = body.foodNutrients.find(
         (item) => item.nutrient.name === 'Magnesium, Mg'
     );
-    if (mg) diary.Magnesium = mg.amount.toString();
+    if (mg) diary.magnesium = mg.amount.toString();
     const k = body.foodNutrients.find(
         (item) => item.nutrient.name === 'Potassium, K'
     );
-    if (k) diary.Potassium = k.amount.toString();
+    if (k) diary.potassium = k.amount.toString();
     const na = body.foodNutrients.find(
         (item) => item.nutrient.name === 'Sodium, Na'
     );
-    if (na) diary.Sodium = na.amount.toString();
+    if (na) diary.sodium = na.amount.toString();
     const zn = body.foodNutrients.find(
         (item) => item.nutrient.name === 'Zinc, Zn'
     );
-    if (zn) diary.Zinc = zn.amount.toString();
+    if (zn) diary.zinc = zn.amount.toString();
     const cu = body.foodNutrients.find(
         (item) => item.nutrient.name === 'Copper, Cu'
     );
-    if (cu) diary.Copper = cu.amount.toString();
+    if (cu) diary.copper = cu.amount.toString();
     const se = body.foodNutrients.find(
         (item) => item.nutrient.name === 'Selenium, Se'
     );
-    if (se) diary.Selenium = se.amount.toString();
+    if (se) diary.selenium = se.amount.toString();
 
     return diary;
 };

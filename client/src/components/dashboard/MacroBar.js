@@ -6,15 +6,11 @@ import { connect } from 'react-redux';
 // no chart will be rendered.
 // website examples showcase many properties,
 // you'll often use just a few of them.
-const MacroBar = ({ diary }) => {
-    const getDatafromDiary = (diary) => [
+const MacroBar = ({ nutrition }) => {
+    const data = [
         {
             id: 'Carb',
-            carb: Math.round(
-                diary
-                    .map((item) => item.carb * (item.quantity / 100))
-                    .reduce((a, b) => a + b, 0)
-            ),
+            carb: nutrition.carb,
             carbColor: '#3379e4',
             protein: 0,
             proteinColor: '#35c2bd',
@@ -25,11 +21,7 @@ const MacroBar = ({ diary }) => {
             id: 'Protein',
             carb: 0,
             carbColor: '#3379e4',
-            protein: Math.round(
-                diary
-                    .map((item) => item.protein * (item.quantity / 100))
-                    .reduce((a, b) => a + b, 0)
-            ),
+            protein: nutrition.protein,
             proteinColor: '#35c2bd',
             fat: 0,
             fatColor: '#f9a828',
@@ -40,15 +32,10 @@ const MacroBar = ({ diary }) => {
             carbColor: '#3379e4',
             protein: 0,
             proteinColor: '#35c2bd',
-            fat: Math.round(
-                diary
-                    .map((item) => item.fat * (item.quantity / 100))
-                    .reduce((a, b) => a + b, 0)
-            ),
+            fat: nutrition.fat,
             fatColor: '#f9a828',
         },
     ];
-    const data = getDatafromDiary(diary);
     return (
         <ResponsiveBar
             data={data}
@@ -86,7 +73,7 @@ const MacroBar = ({ diary }) => {
 };
 
 const mapStateToProps = (state) => ({
-    diary: state.diary.diary,
+    nutrition: state.diary.nutrition,
 });
 
 export default connect(mapStateToProps)(MacroBar);

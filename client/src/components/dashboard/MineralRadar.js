@@ -37,7 +37,7 @@ const MineralRadar = ({ nutrition, setting: { setting, loading } }) => {
             pct: 0,
         },
     ];
-    if (setting && nutrition)
+    if (setting.length > 0 && nutrition)
         data = [
             {
                 id: 'Ca',

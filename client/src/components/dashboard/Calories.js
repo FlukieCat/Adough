@@ -7,7 +7,7 @@ const Calories = ({ nutrition, setting: { setting, loading } }) => {
             <h5>Calories </h5>
             <h5>Consumed:</h5>
             <p>{nutrition.calories} kcal</p>
-            <h5>Needed:</h5>
+            <h5>Remaining:</h5>
             {loading ? (
                 <p> - kcal</p>
             ) : (
